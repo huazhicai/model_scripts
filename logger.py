@@ -1,6 +1,9 @@
 """1、按照时间回滚
 使用TimedRotatingFileHandler
-对log，通常有一种想要的效果：log按天切分，每天一个log文件，保留三天内的log，过期删除。"""
+对log，通常有一种想要的效果：log按天切分，每天一个log文件，保留三天内的log，过期删除。
+日志不回滚的解决办法：
+创建Handler时，把when='D'改成when='MIDNIGHT'可解决这个问题。因为MIDNIGHT指的是，只要过了0点就会滚动。
+"""
 
 # coding:utf-8
 import time
